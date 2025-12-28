@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+ <nav class="navbar">
+    <a href="#" class="logo">Belivar Studio.</a>
+
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+        <i class='bx bx-menu'></i>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    
+</nav>
+
+
+    <section class="home">
+        <div class="home-info">
+            <h1> Belivar Studio</h1>
+            <h2> We create:  
+                <span style="--i:4;" data-text="Designs">Designs</span>
+                <span style="--i:3;" data-text="Flyers">Flyers</span>
+                <span style="--i:2;" data-text="Logos">Logos</span>
+                <span style="--i:1;" data-text="Web Apps">Web Apps</span>
+                
+            </h2>
+            <p>Every line, every color, every interaction is intentional. We merge graphic design, web development, and
+                strategy to shape digital worlds that matter.
+            </p>
+            <div class="btn-sci">
+                <a href="#" class="btn">Download Resume</a>
+                <div class="sci">
+                    <a href="https://github.com/josef4-bit" title="GitHub" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61585463496324" title="Facebook" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://vm.tiktok.com/ZSHKtWLjsXDRh-Yy0mB/" title="TikTok" target="_blank" rel="noopener noreferrer"><i class='bx bxl-tiktok'></i></a>
+                    <a href="https://youtube.com/@snapit-3?si=qx33ru5q51qeMrMR" title="YouTube" target="_blank" rel="noopener noreferrer"><i class='bx bxl-youtube'></i></a>
+                    <a href="#" title="Instagram" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+                    <img src="Joseph.png" alt="Belivar Studio Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="portfolio" id="portfolio">
+    <h2 class="section-title">Belivar Recent Design Projects</h2>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Repeat this block for images -->
+        <!-- You can replace src later -->
+        <!-- 30 slots -->
+        <div class="portfolio-item"><img src="work1.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work2.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work3.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work4.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work5.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work6.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work7.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work8.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work9.jpg" alt=""></div>
+        <div class="portfolio-item"><img src="work10.jpg" alt=""></div>
+
+        <!-- Hidden initially -->
+        <div class="portfolio-item hidden"><img src="work11.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work12.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work13.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work14.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work15.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work16.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work17.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work18.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work19.jpg" alt=""></div>
+        <div class="portfolio-item hidden"><img src="work20.jpg" alt=""></div>
+        <!-- You can continue up to 30 the same way -->
+    </div>
+
+    <div class="show-more-container">
+        <button class="btn" id="showMoreBtn">Show More</button>
+    </div>
+</section>
+
+<script defer>
+    const showMoreBtn = document.getElementById("showMoreBtn");
+    const hiddenItems = document.querySelectorAll(".portfolio-item.hidden");
+    let expanded = false;
+
+    showMoreBtn.addEventListener("click", () => {
+        expanded = !expanded;
+
+        hiddenItems.forEach(item => {
+            item.style.display = expanded ? "block" : "none";
+        });
+
+        showMoreBtn.textContent = expanded ? "Show Less" : "Show More";
+    });
+        // Mobile hamburger menu toggle
+        (function(){
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            if(!menuToggle || !navLinks) return;
+            menuToggle.addEventListener('click', ()=>{
+                navLinks.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                if(icon) icon.classList.toggle('bx-x');
+            });
+            // close when link clicked
+            navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('active')));
+        })();
+</script>
+
+
+<footer class="footer">
+    <p>© 2025 Belivar Studio. All rights reserved.</p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1cbK0aIBWy8fVKrzmfcIz5W3wHZilu_fLxgryiyOKDLlILg/viewform" class="footer-btn">
+        Request a Design
+    </a>
+</footer>
+
+
+</body>
+
+</html>
